@@ -80,32 +80,48 @@ function updateDisplay(s) {
             } else if(displayUpdated && op != "") {
                 op2 = calcDisplay.textContent;
                 console.log(`op2 = ${calcDisplay.textContent}`);
-                calcDisplay.textContent = "" + operate(op, op1, op2)
-                console.log(`calculation: ${op1} ${op} ${op2}`);
-                op1 = calcDisplay.textContent;
-                console.log(`op1 = ${calcDisplay.textContent}`);
-                op2 = "";
-                console.log("op2 = ");
-                updateDisplayRequest = true;
-                console.log("updateDisplayRequest = true");
+                if(op == "/" && op2 == 0) {
+                    calcDisplay.textContent = "Error: division by 0";
+                    op1 = "";
+                    op = "";
+                    op2 = "";
+                    updateDisplayRequest = true;
+                } else {
+                    calcDisplay.textContent = "" + operate(op, op1, op2)
+                    console.log(`calculation: ${op1} ${op} ${op2}`);
+                    op1 = calcDisplay.textContent;
+                    console.log(`op1 = ${calcDisplay.textContent}`);
+                    op2 = "";
+                    console.log("op2 = ");
+                    updateDisplayRequest = true;
+                    console.log("updateDisplayRequest = true");
+                }
             }
         }
         op = s;
         console.log(`op = ${s}`);
     } else if(s == "=") {
         if(op1 != "" && op != "" && displayUpdated) {
-            op2 = calcDisplay.textContent;
-            console.log(`op2 = ${calcDisplay.textContent}`);
-            calcDisplay.textContent = "" + operate(op, op1, op2)
-            console.log(`calculation: ${op1} ${op} ${op2}`);
-            op1 = calcDisplay.textContent;
-            console.log(`op1 = ${calcDisplay.textContent}`);
-            op2 = "";
-            console.log("op2 = ");
-            op = "";
-            console.log("op = ");
-            updateDisplayRequest = true;
-            console.log("updateDisplayRequest = true");
+            if(op == "/" && op2 == 0) {
+                calcDisplay.textContent = "Error: division by 0";
+                op1 = "";
+                op = "";
+                op2 = "";
+                updateDisplayRequest = true;
+            } else {
+                op2 = calcDisplay.textContent;
+                console.log(`op2 = ${calcDisplay.textContent}`);
+                calcDisplay.textContent = "" + operate(op, op1, op2)
+                console.log(`calculation: ${op1} ${op} ${op2}`);
+                op1 = calcDisplay.textContent;
+                console.log(`op1 = ${calcDisplay.textContent}`);
+                op2 = "";
+                console.log("op2 = ");
+                op = "";
+                console.log("op = ");
+                updateDisplayRequest = true;
+                console.log("updateDisplayRequest = true");
+            }
         }
     } else {
         if(updateDisplayRequest) {
