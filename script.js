@@ -43,8 +43,8 @@ controlButtons[1].appendChild(document.createTextNode("8"));
 controlButtons[2].appendChild(document.createTextNode("9"));
 
 function operate(op, x, y) {
-    let a = parseInt(x);
-    let b = parseInt(y);
+    let a = parseFloat(x);
+    let b = parseFloat(y);
     switch(op) {
         case "+":
             return a + b;
