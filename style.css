@@ -1,3 +1,7 @@
+html {
+    font-family: 'Lucida Console', monospace;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -16,6 +20,7 @@ body {
 #calc-display {
     border: solid black;
     height: 20vh;
+    font-size: 7vh;
 }
 
 #calc-controls {
@@ -33,7 +38,10 @@ body {
 
 .control-buttons {
     flex: 1;
+    display: flex;
     border-right: solid black;
     border-bottom: solid black;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vh;
 }
