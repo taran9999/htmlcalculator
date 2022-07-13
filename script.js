@@ -131,7 +131,9 @@ function updateDisplay(s) {
             displayUpdated = true;
             console.log("displayUpdated = true");
         }
-        calcDisplay.textContent += s;
+        if(s != "." || calcDisplay.textContent.indexOf(".") == -1) {
+            calcDisplay.textContent += s;
+        }
     }
     console.log(`op1: ${op1}, op: ${op}, op2: ${op2}, display: ${calcDisplay.textContent}`);
 }
