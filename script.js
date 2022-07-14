@@ -1,5 +1,6 @@
 const calcControls = document.getElementById('calc-controls');
 const calcDisplay = document.getElementById('calc-display');
+const precision = 8;
 let op1 = "";
 let op = "";
 let op2 = "";
@@ -47,16 +48,16 @@ function operate(op, x, y) {
     let b = parseFloat(y);
     switch(op) {
         case "+":
-            return (a + b);
+            return (a + b).toFixed(precision);
 
         case "-":
-            return (a - b);
+            return (a - b).toFixed(precision);
 
         case "*":
-            return (a * b);
+            return (a * b).toFixed(precision);
 
         case "/":
-            return (a / b);
+            return (a / b).toFixed(precision);
     }
 }
 
