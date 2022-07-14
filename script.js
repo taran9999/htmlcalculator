@@ -42,6 +42,7 @@ controlButtons[9].appendChild(document.createTextNode("/"));
 controlButtons[0].appendChild(document.createTextNode("7"));
 controlButtons[1].appendChild(document.createTextNode("8"));
 controlButtons[2].appendChild(document.createTextNode("9"));
+controlButtons[3].appendChild(document.createTextNode("%"));
 
 function operate(op, x, y) {
     let a = parseFloat(x);
@@ -124,6 +125,8 @@ function updateDisplay(s) {
                 console.log("updateDisplayRequest = true");
             }
         }
+    } else if(s == "%") {
+        calcDisplay.textContent /= 100;
     } else {
         if(updateDisplayRequest) {
             calcDisplay.textContent = "";
