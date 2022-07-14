@@ -47,16 +47,16 @@ function operate(op, x, y) {
     let b = parseFloat(y);
     switch(op) {
         case "+":
-            return a + b;
+            return (a + b);
 
         case "-":
-            return a - b;
+            return (a - b);
 
         case "*":
-            return a * b;
+            return (a * b);
 
         case "/":
-            return a / b;
+            return (a / b);
     }
 }
 
@@ -81,13 +81,13 @@ function updateDisplay(s) {
                 op2 = calcDisplay.textContent;
                 console.log(`op2 = ${calcDisplay.textContent}`);
                 if(op == "/" && op2 == 0) {
-                    calcDisplay.textContent = "Error: division by 0";
+                    calcDisplay.textContent = "Error: div by 0";
                     op1 = "";
                     op = "";
                     op2 = "";
                     updateDisplayRequest = true;
                 } else {
-                    calcDisplay.textContent = "" + operate(op, op1, op2)
+                    calcDisplay.textContent = "" + operate(op, op1, op2);
                     console.log(`calculation: ${op1} ${op} ${op2}`);
                     op1 = calcDisplay.textContent;
                     console.log(`op1 = ${calcDisplay.textContent}`);
@@ -102,16 +102,16 @@ function updateDisplay(s) {
         console.log(`op = ${s}`);
     } else if(s == "=") {
         if(op1 != "" && op != "" && displayUpdated) {
+            op2 = calcDisplay.textContent;
+            console.log(`op2 = ${calcDisplay.textContent}`);
             if(op == "/" && op2 == 0) {
-                calcDisplay.textContent = "Error: division by 0";
+                calcDisplay.textContent = "Error: div by 0";
                 op1 = "";
                 op = "";
                 op2 = "";
                 updateDisplayRequest = true;
             } else {
-                op2 = calcDisplay.textContent;
-                console.log(`op2 = ${calcDisplay.textContent}`);
-                calcDisplay.textContent = "" + operate(op, op1, op2)
+                calcDisplay.textContent = "" + operate(op, op1, op2);
                 console.log(`calculation: ${op1} ${op} ${op2}`);
                 op1 = calcDisplay.textContent;
                 console.log(`op1 = ${calcDisplay.textContent}`);
