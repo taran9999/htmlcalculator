@@ -49,16 +49,16 @@ function operate(op, x, y) {
     let b = parseFloat(y);
     switch(op) {
         case "+":
-            return (a + b).toFixed(precision);
+            return parseFloat((a + b).toFixed(precision));
 
         case "-":
-            return (a - b).toFixed(precision);
+            return parseFloat((a - b).toFixed(precision));
 
         case "*":
-            return (a * b).toFixed(precision);
+            return parseFloat((a * b).toFixed(precision));
 
         case "/":
-            return (a / b).toFixed(precision);
+            return parseFloat((a / b).toFixed(precision));
     }
 }
 
